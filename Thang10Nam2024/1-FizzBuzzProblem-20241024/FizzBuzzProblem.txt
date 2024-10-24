@@ -1,0 +1,18 @@
+Math : Print out the numbers from 1 to n. If the number is divisible by 3, print "Fizz". 
+If divisible by 5, print "Buzz". If divisible by both 3 and 5, print "FizzBuzz".
+
+Describe : Problem need you print out number from 1 to n with those conditions
+- Divisible by 3, print out Fizz
+- Divisible by 5, print out Buzz
+- Divisible by 3 and 5, print out FizzBuzz
+- If no, print out exactly that number
+
+How to solve
+- Declare an array - an array to save the last results that you will return
+- Loop from 1 to n - Use a loop to iterate over DuyetQua all number from 1 to n
+- Check condition:
+    * Number's divisible by 3 and 5 or not, If yes, add "FizzBuzz" to array
+    * If no, It can be divisible by 3, If yes, add "Fizz" 
+    * If no, It can be divisible by 5, If yes, add "Buzz"
+    * If not satisfy any above conditions , add that number to array
+- Return an Array
