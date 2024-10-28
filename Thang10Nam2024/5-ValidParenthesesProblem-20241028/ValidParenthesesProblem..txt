@@ -1,0 +1,26 @@
+/*
+Valid Parentheses Problem
+
+Require : This problem require check an array of single Parentheses is valid or not. An string is 
+valid when
+    - Each opening character ((, {, [) must have a corresponding closing character (), }, ]).
+    - The opening and closing characters must be in the correct order. For example, the string 
+    ({[]}) is valid, but ([)] is not.
+
+Solution : Use stack to solve problem, main point of array is LIFO (Last In Fist Out) - Last element
+           push in is the first element push out 
+
+How to do : 
+    - Create a stack : Use stack to save openning char 
+    - Create a Map : This map will match opening char with close char, help us check appropriation
+    easily
+    - Browse each char in string
+        * If opening char, add in stack
+        * If close char, will have 1 more check 
+            + If the stack is empty (that is, there are no opening characters to match the closing
+              character), then the string is invalid.
+            + If the stack is not empty, we take out the top character of the stack and check if 
+            it matches the closing character using the generated map.
+    - Check the stack: Finally, if the stack still contains any characters after traversing the
+    entire string, it means there are open characters that are not closed, so the string is invalid.
+*/
