@@ -14,7 +14,7 @@ How to do :
     - Create a stack : Use stack to save openning char 
     - Create a Map : This map will match opening char with close char, help us check appropriation
     easily
-    - Browse each char in string
+    - Browse each char in string !
         * If opening char, add in stack
         * If close char, will have 1 more check 
             + If the stack is empty (that is, there are no opening characters to match the closing
