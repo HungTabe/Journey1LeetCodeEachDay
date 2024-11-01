@@ -1,0 +1,24 @@
+/*
+    Merge Two Sorted Lists
+    
+    Require : Need to merge 2 Sorted Lists to 1 Sorted List - New list also must be sorted
+
+    Example :
+        Input : list1 = 1 2 4
+                list2 = 1 3 4
+        Output :  1 1 2 3 4 4
+
+    How to solve : 
+    1. Create new sorted list : 
+        Use fake node ( dummy node ) to mangage new list : This node will not include any
+        value but will help us maintain link to beginning of new list (Sử dụng một nút giả
+        (dummy node) để giúp dễ dàng quản lý danh sách mới. Nút này sẽ không chứa giá trị gì
+        nhưng sẽ giúp chúng ta duy trì liên kết đến đầu của danh sách mới.)
+    2. Use pointer
+        Use a pointer to keep track last location of new list
+    3. Compare and connect buttons
+        Browse through both 2 list l1 and l2, compare value of present node at 2 list
+        Link smaller node to new list and move pointer of that list to new node
+    4 Link the rest
+        After one of 2 lists is end - if there are still nodes in remain - link to new list
+*/
