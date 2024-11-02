@@ -1,0 +1,40 @@
+/*
+    Longest Substring Without Repeating Characters
+
+    Require : Find out longest subString in given string that
+    dont include repeat char.
+    Learn : How to use string : use Algorithm Sliding window
+    ThuatToanTruot combine with a data structure CauTrucDulieu
+    Set 
+
+    How to solve
+    - Input  : String s.
+    - Output : String and lenth of longest substring that not 
+               include repeat char 
+
+    Strategy
+    1. Use 2 pointer left and right 
+       left : point out head of current sub string
+       right : Browse each char in string
+    2. Set to keep track char that seen
+       Use a set to save chars in current sub string
+    3. Browse string
+       If char at s[right] not have in set yet - add in and
+       update maxLenght 
+       If that char already have in, that mean sub string have 
+       been repeat/ In this case move left pointer to next 
+       position untill sub string not have any repeat char 
+    4. Do until end String 
+
+    Example
+    string : s = "abcabcbb"
+    * Begin : left = 0 ; right = 0 and maxLenght = 0
+    Browse each char
+        * right = 0: a - add to set, maxLenght = 1
+        * right = 1: b - add to set, maxLength = 2
+        ...
+        * right = 3: a - already have in set, move left from 0
+        delete a out of set , left = 1, and add new a maxLenght 
+        still  3
+        Repeat intill right go to end of string
+*/
