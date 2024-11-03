@@ -1,0 +1,27 @@
+/*
+    Best Time to Buy and Sell Stock Problem
+    Require : Find out best time to buy and sell a stock to
+    get max profit
+
+    Problem
+    1. Given : An array of int number - each element represent
+    stock price at specific day
+        You only buy or sell that stock 1 time 
+        You must find out max profit can achieve
+    
+    2. Condition
+        - You can't sell if you haven't bought it 
+        - Only can do 1 transaction
+    
+    3. Example
+        - You have prices = [7,1,5,3,6,4].
+        If you buy stock at monday with price 1 and sell at
+        thursday with price 6 - You profit = 6 -1 = 5
+
+    4. Solution
+        - The best way to solve is using simple browsing 
+        (O(n)) with 2 var
+        - minPrice: Save lowest price of stock You have ever
+        seen so far
+        - maxPrice: Save max profit that you can achieve 
+*/
