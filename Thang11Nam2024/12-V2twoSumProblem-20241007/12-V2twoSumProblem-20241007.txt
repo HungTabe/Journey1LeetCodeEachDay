@@ -1,0 +1,92 @@
+/*
+    TwoSum Problem
+
+    12-V2twoSumProblem-20241007
+
+    Require : Find out 2 array's index so we can sum value
+    together will equal target number.
+    Give an array and target number
+
+    Input : 
+    nums = [2, 7, 11, 15], target = 9
+    Output : 
+    [0, 1]
+
+    Solution : 
+    Use hashmap Bảng Băm to minimum time complexity
+
+    Use map to store number have seen in array
+    In each loop step we will calculate out need additional
+    number call complement = target - num[i]
+    and check that complement have occured in map or not
+    If yes : we have findout number couple needed number
+    Complement in array and number i
+
+    Pseudo code
+    - Browse each element in array
+    - With each element find complement = target - num[i]
+    - Check element have occured in map yet
+        - If yes : find out return result
+        - If no : push element to map with index and value
+    - Countinue
+ */
+
+function twoSum(nums: number[], target: number): number[] {
+    // Map to store value and index
+    const map = new Map<number, number>()
+    for (let i = 0; i < nums?.length; i++) {
+        // find complement to check 
+        const complement = target - nums[i]
+        //
+        if (map.has(complement)) {
+            // return index of couple needed value
+            return [i, map.get(complement)!];
+        }
+        map.set(nums[i],i)
+    }
+    return []
+}
+
+function V2twoSum(nums: number[], target: number) : number[] {
+    // Map to store saw numbers
+    const map = new Map<number, number>()
+
+    for (let i = 0; i < nums.length; i++) {
+        const complement = target - nums[i]
+        if (map.has(nums[i])) {
+            return [map.get(complement)!, i]
+        }
+        map.set(nums[i], i)
+    }
+    return []
+}
+
+// Các test case
+function runTests() {
+    // Test case 1: Mảng có tổng bằng target
+    const result1 = twoSum([2, 7, 11, 15], 9);
+    console.log(result1);  // Output: [0, 1], vì 2 + 7 = 9
+
+    // Test case 2: Các số có thể là số âm
+    const result2 = twoSum([-1, -2, -3, -4, -5], -8);
+    console.log(result2);  // Output: [2, 4], vì -3 + -5 = -8
+
+    // Test case 3: Không có phần tử nào thỏa mãn điều kiện (nhưng bài toán đảm bảo có kết quả duy nhất, nên không cần test trường hợp này trong thực tế)
+    const result3 = twoSum([1, 2, 3], 7);
+    console.log(result3);  // Output: [], vì không có cặp nào có tổng = 7
+
+    // Test case 4: Các số trùng lặp
+    const result4 = twoSum([3, 3], 6);
+    console.log(result4);  // Output: [0, 1], vì 3 + 3 = 6
+
+    // Test case 5: Mảng có một phần tử
+    const result5 = twoSum([1], 2);
+    console.log(result5);  // Output: [], vì không thể tìm ra cặp nào
+
+    // Test case 6: Kiểm tra với các số lớn
+    const result6 = twoSum([1000000, 500000, 2000000], 1500000);
+    console.log(result6);  // Output: [0, 1], vì 1000000 + 500000 = 1500000
+}
+
+// Chạy các test
+runTests();
