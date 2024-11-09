@@ -61,7 +61,7 @@ function V2twoSum(nums: number[], target: number) : number[] {
     return []
 }
 
-// Các test case haihaihai
+// Các test case
 function runTests() {
     // Test case 1: Mảng có tổng bằng target
     const result1 = twoSum([2, 7, 11, 15], 9);
