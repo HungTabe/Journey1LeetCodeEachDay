@@ -1,0 +1,73 @@
+// Valid Parentheses
+function isValid (s: string) : boolean {
+    const stack: string[] = []
+    // map to AnhXa
+    const map: {[key: string] : string} = {
+        '}':'{',
+        ']':'[',
+        ')':'(',
+    }
+    for (const char of s) {
+        if (char in map) {
+            if (stack.pop() !== map[char] ) {
+            return false }
+            else {
+            // if open char
+            stack.push(char)
+            }
+        }
+    }
+    return stack.length === 0
+}
+
+// Valid Parentheses
+
+function isValid(s: string): boolean {
+
+    // Use stack LIFO to store open char
+
+    const stack: string[] = [];
+
+    // Use map to AnhXa close char with open char
+
+    const map: { [key: string]: string} = {
+
+        ')': '(',
+
+        '}': '{',
+
+        ']': '['
+
+    };
+
+    // Browse char of s
+
+    for (const char of s) {
+
+        // If char is in map is close char // check char is in key set or not
+
+        if (char in map) {
+
+            // Check stack is null or not | If top char of stack
+
+            // not === value of key char in map at present
+
+            if( stack.pop() !== map[char]) {
+
+                return false
+
+            }
+
+        } else {
+
+            // If is open char - push to stack
+
+            stack.push(char)
+
+        }
+
+    }
+
+    return stack.length === 0
+
+}
