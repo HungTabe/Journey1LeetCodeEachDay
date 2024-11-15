@@ -48,7 +48,7 @@
     Tính toán và cập nhật độ dài của chuỗi con không trùng lặp tại
     mỗi bước.
 
-    Kết quả: Độ dài của chuỗi con dài nhất không có ký tự lặp lại là
+    Kết quả: Độ dài của chuỗi con dài nhất không có ký tự lặp lại là xx
     kết quả cuối cùng.
 */
 
