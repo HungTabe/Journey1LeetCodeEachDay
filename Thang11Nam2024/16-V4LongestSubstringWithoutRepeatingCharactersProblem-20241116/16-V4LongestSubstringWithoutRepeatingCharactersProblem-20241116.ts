@@ -49,7 +49,7 @@
     mỗi bước.
 
     Kết quả: Độ dài của chuỗi con dài nhất không có ký tự lặp lại là xx
-    kết quả cuối cùng.
+    kết quả cuối cùng. XX
 */
 
 function lengthOfLongestSubstring(s: string): number {
