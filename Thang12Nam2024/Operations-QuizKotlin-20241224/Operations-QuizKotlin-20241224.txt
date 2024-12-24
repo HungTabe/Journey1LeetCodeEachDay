@@ -1,0 +1,27 @@
+val heroes = listOf(
+  Hero("The Captain", 60, MALE),
+  Hero("Frenchy", 42, MALE), 
+  Hero("The Kid", 9, null),
+  Hero("Lady Lauren", 29, FEMALE),
+  Hero("First Mate", 29, MALE),
+  Hero("Sir Stephen", 37, MALE))
+
+val (first, second) = heroes
+  .flatMap { heroes.map { hero -> it to hero } } 
+  .maxBy { it.first.age - it.second.age }!!
+first.name
+
+========================
+heroes.flatMap { ... }
+- Lấy từng it là hero Obj trong danh sách heroes.
+Kết quả của lambda (phần trong { ... }) sẽ được "dàn phẳng" thành danh sách chính.
+Bên trong { ... } sẽ thường là các element là mảng các obj -> flat -> mảng element là obj
+
+heroes.map { hero -> it to hero }
+heroes.map: Với mỗi it (hero Obj hiện tại trong flatMap), lặp qua toàn bộ danh sách heroes để:
+it to hero
+
+Kết quả: Danh sách các cặp (List<Pair<Hero, Hero>>):
+(first, second) sẽ return về Pair<Hero, Hero> có khoảng cách tuổi lớn nhât : 60 - 9 = 54
+
+first.name sẽ là The Captai
