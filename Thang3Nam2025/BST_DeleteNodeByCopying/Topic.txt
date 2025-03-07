@@ -1,0 +1,51 @@
+public void deleteByCopying(int x) {
+	// At here : Empty tree
+	if (root == null) return;
+	
+	// Case tree not null
+	Node current = root, parent = null;
+	
+	// Find node need to delete, and its parent
+	
+	// This while will search till current == null or till current.data == x 
+	while (current != null && current.data != x) {
+		parent = current;
+		if (x < current.data) {
+			current = current.left;
+		} else {
+		// have case current.data == x
+			current = current.right;
+		}
+	} 
+	
+	// Case current != null
+	if (current == null) return;
+	
+	// Case : current.data == x 
+	// SubCase : Node have 2 kids
+	if (current.left != null && current.right != null) {
+        Node largestLeft = current.left, parentLargest = current;
+        while (largestLeft.right != null) {
+            parentLargest = largestLeft;
+            largestLeft = largestLeft.right;
+        }
+        current.data = largestLeft.data;
+        if (parentLargest.right == largestLeft) {
+            parentLargest.right = largestLeft.left;
+        } else {
+            parentLargest.left = largestLeft.left;
+        }
+    }
+    // Xử lý trường hợp node có 0 hoặc 1 con
+    else {
+        Node child = (current.left != null) ? current.left : current.right;
+
+        if (parent == null) { // Xóa root
+            root = child;
+        } else if (parent.left == current) {
+            parent.left = child;
+        } else {
+            parent.right = child;
+        }
+    }
+}
